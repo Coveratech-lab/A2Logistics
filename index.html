@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A2Logistics - Premium global logistics and transportation solutions. Fast, reliable, innovative.">
+    <title>A2Logistics | Global Logistics Excellence</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <span class="logo-icon">A2</span>
+                    <span class="logo-text">Logistics</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#network" class="nav-link">Network</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-nav">Get Quote</a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Animated Background Canvas -->
+        <div class="hero-canvas">
+            <!-- Geometric Shapes -->
+            <div class="hero-shape hero-shape-1"></div>
+            <div class="hero-shape hero-shape-2"></div>
+            <div class="hero-shape hero-shape-3"></div>
+            <div class="hero-shape hero-shape-4"></div>
+            
+            <!-- Moving Grid Pattern -->
+            <div class="hero-grid"></div>
+            
+            <!-- Floating Particles -->
+            <div class="particles-container">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            
+            <!-- Gradient Orbs -->
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            
+            <!-- Interconnected World Map -->
+            <div class="world-map-bg">
+                <svg class="world-map-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                        <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(0, 102, 255, 0.1);stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:rgba(0, 212, 255, 0.2);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(0, 102, 255, 0.1);stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge> 
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- World Map Outline -->
+                    <g class="world-continents">
+                        <path class="continent" d="M150,200 Q200,180 250,200 Q300,220 350,200 Q400,180 450,200 Q500,220 550,200 Q600,180 650,200 Q700,220 750,200 Q800,180 850,200" stroke="url(#mapGradient)" stroke-width="2" fill="none" filter="url(#glow)"/>
+                        <path class="continent" d="M200,250 Q250,230 300,250 Q350,270 400,250 Q450,230 500,250 Q550,270 600,250 Q650,230 700,250 Q750,270 800,250" stroke="url(#mapGradient)" stroke-width="2" fill="none" filter="url(#glow)"/>
+                        <path class="continent" d="M100,300 Q150,280 200,300 Q250,320 300,300 Q350,280 400,300 Q450,320 500,300 Q550,280 600,300 Q650,320 700,300 Q750,280 800,300 Q850,320 900,300" stroke="url(#mapGradient)" stroke-width="2" fill="none" filter="url(#glow)"/>
+                        <path class="continent" d="M150,350 Q200,330 250,350 Q300,370 350,350 Q400,330 450,350 Q500,370 550,350 Q600,330 650,350 Q700,370 750,350 Q800,330 850,350" stroke="url(#mapGradient)" stroke-width="2" fill="none" filter="url(#glow)"/>
+                        <path class="continent" d="M200,400 Q250,380 300,400 Q350,420 400,400 Q450,380 500,400 Q550,420 600,400 Q650,380 700,400 Q750,420 800,400" stroke="url(#mapGradient)" stroke-width="2" fill="none" filter="url(#glow)"/>
+                    </g>
+                    
+                    <!-- Connection Lines -->
+                    <g class="connection-lines">
+                        <path class="connection-line" d="M200,200 Q300,150 400,200 Q500,150 600,200 Q700,150 800,200" stroke="url(#mapGradient)" stroke-width="1.5" fill="none" filter="url(#glow)"/>
+                        <path class="connection-line" d="M150,250 Q250,200 350,250 Q450,200 550,250 Q650,200 750,250 Q850,200 950,250" stroke="url(#mapGradient)" stroke-width="1.5" fill="none" filter="url(#glow)"/>
+                        <path class="connection-line" d="M100,300 Q200,250 300,300 Q400,250 500,300 Q600,250 700,300 Q800,250 900,300" stroke="url(#mapGradient)" stroke-width="1.5" fill="none" filter="url(#glow)"/>
+                        <path class="connection-line" d="M150,350 Q250,300 350,350 Q450,300 550,350 Q650,300 750,350 Q850,300 950,350" stroke="url(#mapGradient)" stroke-width="1.5" fill="none" filter="url(#glow)"/>
+                        <path class="connection-line" d="M200,400 Q300,350 400,400 Q500,350 600,400 Q700,350 800,400" stroke="url(#mapGradient)" stroke-width="1.5" fill="none" filter="url(#glow)"/>
+                    </g>
+                    
+                    <!-- Connection Nodes -->
+                    <g class="connection-nodes">
+                        <circle class="node" cx="200" cy="200" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="400" cy="200" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="600" cy="200" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="800" cy="200" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="150" cy="250" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="350" cy="250" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="550" cy="250" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="750" cy="250" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="100" cy="300" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="300" cy="300" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="500" cy="300" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="700" cy="300" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="900" cy="300" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="150" cy="350" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="350" cy="350" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="550" cy="350" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="750" cy="350" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="200" cy="400" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="400" cy="400" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="600" cy="400" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                        <circle class="node" cx="800" cy="400" r="3" fill="url(#mapGradient)" filter="url(#glow)"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-text">World's Leading Logistics Network</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">
+                            <span class="title-word">Connecting</span>
+                        </span>
+                        <span class="title-line">
+                            <span class="title-word highlight">Global</span>
+                        </span>
+                        <span class="title-line title-no-wrap">
+                            <span class="title-word">Supply Chains</span>
+                        </span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        We don't just move cargo—we power the world's economy. 
+                        <strong>150+ countries</strong> connected through precision, innovation, and unwavering reliability.
+                    </p>
+                    
+                    <!-- Stats Inline -->
+                    <div class="hero-stats-inline">
+                        <div class="stat-inline">
+                            <div class="stat-number-inline" data-target="150">0</div>
+                            <div class="stat-label-inline">Countries</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-inline">
+                            <div class="stat-number-inline" data-target="99.9">0</div>
+                            <div class="stat-label-inline">On-Time %</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-inline">
+                            <div class="stat-number-inline" data-target="24">0</div>
+                            <div class="stat-label-inline">Support</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary btn-large">
+                            <span>Start Shipping</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#services" class="btn btn-secondary btn-large">
+                            <span>Explore Services</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Hero Visual -->
+                <div class="hero-visual">
+                    <!-- Central Globe/Network Visualization -->
+                    <div class="hero-globe-container">
+                        <div class="globe-core">
+                            <div class="globe-ring ring-1"></div>
+                            <div class="globe-ring ring-2"></div>
+                            <div class="globe-ring ring-3"></div>
+                            <div class="globe-center">
+                                <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="url(#grad1)" stroke-width="1.5"/>
+                                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="url(#grad1)" stroke-width="1.5"/>
+                                    <defs>
+                                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#0066ff;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Service Cards -->
+                    <div class="hero-service-card card-position-1">
+                        <div class="service-card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                <path d="M21.17 8 H 2.83 l -1.42 4 h 21.18 l -1.42 -4 Z m -17.92 4 l 1.42 4 H 21.17 l 1.42 -4 H 3.25 Z"/>
+                            </svg>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-label">Air Freight</div>
+                            <div class="service-card-value">24-48hrs</div>
+                        </div>
+                        <div class="service-card-glow"></div>
+                    </div>
+                    
+                    <div class="hero-service-card card-position-2">
+                        <div class="service-card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                <path d="M2 12h20M5 12V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5M2 12v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5"/>
+                            </svg>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-label">Sea Freight</div>
+                            <div class="service-card-value">Optimized</div>
+                        </div>
+                        <div class="service-card-glow"></div>
+                    </div>
+                    
+                    <div class="hero-service-card card-position-3">
+                        <div class="service-card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                <path d="M5 18h14M18 18v-5H6v5M12 13V9"/>
+                            </svg>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-label">Road Freight</div>
+                            <div class="service-card-value">Reliable</div>
+                        </div>
+                        <div class="service-card-glow"></div>
+                    </div>
+                    
+                    <div class="hero-service-card card-position-4">
+                        <div class="service-card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <path d="M8 12h8M12 8v8"/>
+                            </svg>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-label">Warehouse</div>
+                            <div class="service-card-value">Secure</div>
+                        </div>
+                        <div class="service-card-glow"></div>
+                    </div>
+                    
+                    <!-- Connection Lines -->
+                    <svg class="hero-connections" viewBox="0 0 600 600">
+                        <defs>
+                            <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:rgba(0,102,255,0);stop-opacity:0" />
+                                <stop offset="50%" style="stop-color:rgba(0,212,255,0.6);stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:rgba(0,102,255,0);stop-opacity:0" />
+                            </linearGradient>
+                        </defs>
+                        <path class="connection-line line-1" d="M 300 300 Q 150 100 100 80" stroke="url(#lineGrad1)" stroke-width="2" fill="none"/>
+                        <path class="connection-line line-2" d="M 300 300 Q 450 100 500 80" stroke="url(#lineGrad1)" stroke-width="2" fill="none"/>
+                        <path class="connection-line line-3" d="M 300 300 Q 150 500 100 520" stroke="url(#lineGrad1)" stroke-width="2" fill="none"/>
+                        <path class="connection-line line-4" d="M 300 300 Q 450 500 500 520" stroke="url(#lineGrad1)" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Services</span>
+                <h2 class="section-title">End-to-End Logistics Excellence</h2>
+                <p class="section-description">
+                    From air to sea to ground—comprehensive freight solutions engineered for speed, efficiency, and reliability.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-service="air">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                <path d="M21.17 8 H 2.83 l -1.42 4 h 21.18 l -1.42 -4 Z m -17.92 4 l 1.42 4 H 21.17 l 1.42 -4 H 3.25 Z"/>
+                            </svg>
+                        </div>
+                        <div class="service-number">01</div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Air Freight</h3>
+                        <p class="service-description">Express global air cargo with real-time tracking and priority handling for time-critical shipments.</p>
+                        <ul class="service-features">
+                            <li>Same-day & next-day delivery</li>
+                            <li>Temperature-controlled options</li>
+                            <li>Dangerous goods certified</li>
+                            <li>Express customs clearance</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <a href="#contact" class="service-link">
+                            <span>Learn More</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card" data-service="sea">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                <path d="M2 12h20M5 12V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5M2 12v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5"/>
+                            </svg>
+                        </div>
+                        <div class="service-number">02</div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Sea Freight</h3>
+                        <p class="service-description">Cost-effective ocean freight for bulk and container shipping with comprehensive port coverage.</p>
+                        <ul class="service-features">
+                            <li>FCL & LCL options</li>
+                            <li>Customs clearance</li>
+                            <li>Port-to-port or door-to-door</li>
+                            <li>Refrigerated containers</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <a href="#contact" class="service-link">
+                            <span>Learn More</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card" data-service="road">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                <path d="M5 18h14M18 18v-5H6v5M12 13V9"/>
+                            </svg>
+                        </div>
+                        <div class="service-number">03</div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Road Freight</h3>
+                        <p class="service-description">Extensive ground transportation network covering local and cross-border routes with full visibility.</p>
+                        <ul class="service-features">
+                            <li>Full truckload & LTL</li>
+                            <li>Express delivery options</li>
+                            <li>Cold chain logistics</li>
+                            <li>Cross-border expertise</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <a href="#contact" class="service-link">
+                            <span>Learn More</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card" data-service="warehouse">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <path d="M8 12h8M12 8v8"/>
+                            </svg>
+                        </div>
+                        <div class="service-number">04</div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Warehouse</h3>
+                        <p class="service-description">State-of-the-art warehousing and distribution centers with AI-powered inventory management.</p>
+                        <ul class="service-features">
+                            <li>Automated storage systems</li>
+                            <li>E-commerce fulfillment</li>
+                            <li>Pick, pack & ship</li>
+                            <li>Real-time inventory</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <a href="#contact" class="service-link">
+                            <span>Learn More</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title">Redefining Global Logistics</h2>
+                    <p class="section-description">
+                        We don't just move cargo—we orchestrate seamless connections across the globe. 
+                        Our technology-driven approach ensures precision, efficiency, and reliability at every step.
+                    </p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <div class="value-icon">⚡</div>
+                            <div class="value-content">
+                                <h3>Speed</h3>
+                                <p>Lightning-fast deliveries with optimized routes</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🎯</div>
+                            <div class="value-content">
+                                <h3>Precision</h3>
+                                <p>99.9% on-time delivery rate</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🔒</div>
+                            <div class="value-content">
+                                <h3>Security</h3>
+                                <p>Enterprise-grade protection</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-card">
+                        <div class="card-stats">
+                            <div class="stat-card">
+                                <div class="stat-large">150+</div>
+                                <div class="stat-small">Countries</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-large">99.9%</div>
+                                <div class="stat-small">Success Rate</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-large">500K+</div>
+                                <div class="stat-small">Shipments</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Network Section -->
+    <section class="network" id="network">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Global Network</span>
+                <h2 class="section-title">Connected World</h2>
+                <p class="section-description">
+                    Our logistics network spans across continents, connecting markets and delivering excellence with unmatched precision and speed.
+                </p>
+            </div>
+            <div class="network-content">
+                <div class="network-features">
+                    <div class="network-feature">
+                        <div class="feature-icon">🌍</div>
+                        <div class="feature-content">
+                            <h3>150+ Countries</h3>
+                            <p>Global Coverage</p>
+                        </div>
+                    </div>
+                    <div class="network-feature">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-content">
+                            <h3>99.9% Uptime</h3>
+                            <p>Reliable Service</p>
+                        </div>
+                    </div>
+                    <div class="network-feature">
+                        <div class="feature-icon">🔒</div>
+                        <div class="feature-content">
+                            <h3>Secure</h3>
+                            <p>Tracked & Protected</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="network-visual">
+                    <div class="network-map">
+                        <div class="globe"></div>
+                        <!-- Map Background with Continents -->
+                        <div class="map-overlay"></div>
+                        
+                        <!-- Interactive Points with Labels -->
+                        <div class="map-point-wrapper" style="top: 20%; left: 12%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇺🇸</span>
+                                <span class="label-text">North America</span>
+                            </div>
+                        </div>
+                        <div class="map-point-wrapper" style="top: 25%; left: 48%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇪🇺</span>
+                                <span class="label-text">Europe</span>
+                            </div>
+                        </div>
+                        <div class="map-point-wrapper" style="top: 22%; left: 85%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇨🇳</span>
+                                <span class="label-text">Asia</span>
+                            </div>
+                        </div>
+                        <div class="map-point-wrapper" style="top: 60%; left: 15%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇧🇷</span>
+                                <span class="label-text">South America</span>
+                            </div>
+                        </div>
+                        <div class="map-point-wrapper" style="top: 75%; left: 75%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇦🇺</span>
+                                <span class="label-text">Australia</span>
+                            </div>
+                        </div>
+                        <div class="map-point-wrapper" style="top: 50%; left: 50%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇳🇬</span>
+                                <span class="label-text">Africa</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Animated Route Lines - Glowing Global Routes -->
+                        <!-- North America to Europe (Atlantic) -->
+                        <div class="route-line curved" style="top: 18%; left: 20%; width: 35%; transform: rotate(15deg);"><span class="route-dot"></span></div>
+                        <!-- Europe to Asia (Eurasian) -->
+                        <div class="route-line curved" style="top: 22%; left: 50%; width: 30%; transform: rotate(-5deg);"><span class="route-dot"></span></div>
+                        <!-- North America to Asia (Pacific) -->
+                        <div class="route-line curved" style="top: 12%; left: 15%; width: 75%; transform: rotate(3deg);"><span class="route-dot"></span></div>
+                        <!-- Europe to Africa (Mediterranean) -->
+                        <div class="route-line curved" style="top: 38%; left: 50%; width: 20%; transform: rotate(90deg);"><span class="route-dot"></span></div>
+                        <!-- Asia to Australia (Asia-Pacific) -->
+                        <div class="route-line curved" style="top: 58%; left: 75%; width: 18%; transform: rotate(-30deg);"><span class="route-dot"></span></div>
+                        <!-- North America to South America (Americas) -->
+                        <div class="route-line curved" style="top: 32%; left: 25%; width: 25%; transform: rotate(85deg);"><span class="route-dot"></span></div>
+                        <!-- Africa to Asia (Indian Ocean) -->
+                        <div class="route-line curved" style="top: 42%; left: 45%; width: 35%; transform: rotate(-12deg);"><span class="route-dot"></span></div>
+                        <!-- Europe to South America (Atlantic) -->
+                        <div class="route-line curved" style="top: 35%; left: 50%; width: 30%; transform: rotate(-50deg);"><span class="route-dot"></span></div>
+                        <!-- Cross-Pacific Long Route -->
+                        <div class="route-line curved" style="top: 25%; left: 8%; width: 85%; transform: rotate(1deg);"><span class="route-dot"></span></div>
+                        <!-- Additional connecting routes -->
+                        <div class="route-line curved" style="top: 28%; left: 30%; width: 25%; transform: rotate(45deg);"><span class="route-dot"></span></div>
+                        <div class="route-line curved" style="top: 45%; left: 60%; width: 20%; transform: rotate(-60deg);"><span class="route-dot"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-title">Let's Move Your Business Forward</h2>
+                    <p class="section-description">
+                        Ready to streamline your logistics? Contact us today for a customized solution tailored to your needs.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h3>Headquarters</h3>
+                                <p>1600 Amphitheatre Parkway<br>Mountain View, CA 94043</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">
+                                <h3>Phone</h3>
+                                <p>+1 (555) 123-4567<br>24/7 Support Available</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p>info@a2logistics.com<br>contact@a2logistics.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone Number" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required class="form-input">
+                                <option value="">Select a Service</option>
+                                <option value="air-freight">Air Freight</option>
+                                <option value="sea-freight">Sea Freight</option>
+                                <option value="road-freight">Road Freight</option>
+                                <option value="warehouse">Warehouse Management</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required class="form-input"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>Send Message</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 10H17M17 10L13 6M17 10L13 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">A2</span>
+                        <span class="logo-text">Logistics</span>
+                    </div>
+                    <p class="footer-description">
+                        Moving the world with precision, innovation, and unmatched reliability.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Services</h4>
+                        <ul class="footer-list">
+                            <li><a href="#services">Air Freight</a></li>
+                            <li><a href="#services">Sea Freight</a></li>
+                            <li><a href="#services">Road Freight</a></li>
+                            <li><a href="#services">Warehouse</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Company</h4>
+                        <ul class="footer-list">
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#network">Network</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Legal</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                            <li><a href="#">Compliance</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 A2Logistics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

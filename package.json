@@ -1,0 +1,23 @@
+{
+  "name": "a2logistics",
+  "version": "1.0.0",
+  "description": "Premium logistics and transportation company website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 8080 -o",
+    "dev": "npx http-server . -p 8080 -o"
+  },
+  "keywords": [
+    "logistics",
+    "transportation",
+    "freight",
+    "shipping",
+    "warehouse"
+  ],
+  "author": "A2Logistics",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
+

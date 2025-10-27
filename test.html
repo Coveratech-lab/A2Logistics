@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Logistics Expertise | A2Logistics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 24px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #00d4ff;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #0066ff, #0085ff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            background: radial-gradient(circle at center, rgba(0, 102, 255, 0.05), transparent 70%);
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 
+                0 0 100px rgba(0, 102, 255, 0.3),
+                inset 0 0 100px rgba(0, 212, 255, 0.1);
+        }
+
+        .map-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* World Map SVG */
+        .world-map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+        }
+
+        .continent {
+            fill: rgba(0, 212, 255, 0.18);
+            stroke: #00d4ff;
+            stroke-width: 1.5;
+            filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.6));
+            transition: all 0.4s ease;
+            animation: continentGlow 4s ease-in-out infinite;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+        }
+
+        .continent:hover {
+            fill: rgba(0, 212, 255, 0.3);
+            stroke-width: 3;
+            filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8));
+        }
+
+        @keyframes continentGlow {
+            0%, 100% { 
+                opacity: 1; 
+                filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+            }
+            50% { 
+                opacity: 0.8; 
+                filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8));
+            }
+        }
+
+        .route-line {
+            stroke: #00d4ff;
+            stroke-width: 2;
+            fill: none;
+            filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.8));
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawRoute 3s ease-in-out forwards, pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes drawRoute {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.8));
+                opacity: 0.8;
+            }
+            50% {
+                filter: drop-shadow(0 0 16px rgba(0, 212, 255, 1));
+                opacity: 1;
+            }
+        }
+
+        /* Animated route particles */
+        .route-particle {
+            fill: #fff;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+            animation: travelRoute 4s linear infinite;
+        }
+
+        @keyframes travelRoute {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* City nodes */
+        .city-node {
+            fill: #00d4ff;
+            stroke: #fff;
+            stroke-width: 2;
+            cursor: pointer;
+            filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.8));
+            animation: nodePulse 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes nodePulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 1;
+            }
+        }
+
+        .city-node:hover {
+            fill: #fff;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1));
+        }
+
+        /* City labels */
+        .city-label {
+            fill: rgba(255, 255, 255, 0.9);
+            font-size: 12px;
+            font-weight: 700;
+            pointer-events: none;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .city-node:hover + .city-label {
+            opacity: 1;
+        }
+
+        /* Background particles */
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #00d4ff;
+            border-radius: 50%;
+            filter: blur(1px);
+            box-shadow: 0 0 10px #00d4ff;
+            opacity: 0;
+            animation: floatUp 20s infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                bottom: 0;
+                opacity: 0;
+                transform: translateX(0);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 100%;
+                opacity: 0;
+                transform: translateX(100px);
+            }
+        }
+
+        /* Stats footer */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #0066ff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .map-container {
+                height: 500px;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="badge">⭐ Global Coverage & Expertise</div>
+            <h1>World-Class Logistics Network</h1>
+            <p class="subtitle">
+                Experience our expansive global reach spanning 150+ countries with real-time tracking, 
+                optimized routes, and seamless logistics solutions powered by cutting-edge technology.
+            </p>
+        </div>
+
+        <div class="map-container">
+            <div class="map-wrapper">
+                <!-- Background particles -->
+                <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+                <div class="particle" style="left: 25%; animation-delay: 2s;"></div>
+                <div class="particle" style="left: 40%; animation-delay: 4s;"></div>
+                <div class="particle" style="left: 55%; animation-delay: 6s;"></div>
+                <div class="particle" style="left: 70%; animation-delay: 8s;"></div>
+                <div class="particle" style="left: 85%; animation-delay: 10s;"></div>
+
+                <!-- World Map SVG -->
+                <svg class="world-map" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(0, 102, 255, 0.1);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(0, 212, 255, 0.05);stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:rgba(0, 212, 255, 0.8);stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:rgba(0, 212, 255, 1);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(0, 212, 255, 0.8);stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Ocean Background with World Map Image -->
+                    <image href="logistics_network.png" x="0" y="0" width="1000" height="500" opacity="0.95" preserveAspectRatio="xMidYMid meet" />
+                    <!-- Overlay for better visibility -->
+                    <rect width="1000" height="500" fill="url(#oceanGradient)" opacity="0.3" />
+
+                    <!-- Route Lines - Major Shipping Routes -->
+                    <!-- NYC to LAX (Trans-America) -->
+                    <path class="route-line" d="M 300 120 L 450 100" style="animation-delay: 0.5s;" />
+                    <circle class="route-particle" r="5" cx="300" cy="120">
+                        <animateMotion path="M 300 120 L 450 100" dur="2s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- NYC to LON (Trans-Atlantic) -->
+                    <path class="route-line" d="M 300 120 L 520 85" style="animation-delay: 0.8s;" />
+                    <circle class="route-particle" r="5" cx="300" cy="120">
+                        <animateMotion path="M 300 120 L 520 85" dur="2.5s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- LON to DXB (Europe to Middle East) -->
+                    <path class="route-line" d="M 520 85 L 680 95" style="animation-delay: 1.1s;" />
+                    <circle class="route-particle" r="5" cx="520" cy="85">
+                        <animateMotion path="M 520 85 L 680 95" dur="1.8s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- DXB to HKG (Middle East to Asia) -->
+                    <path class="route-line" d="M 680 95 L 750 110" style="animation-delay: 1.4s;" />
+                    <circle class="route-particle" r="5" cx="680" cy="95">
+                        <animateMotion path="M 680 95 L 750 110" dur="1.5s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- HKG to SYD (Asia to Australia) -->
+                    <path class="route-line" d="M 750 110 L 800 200" style="animation-delay: 1.7s;" />
+                    <circle class="route-particle" r="5" cx="750" cy="110">
+                        <animateMotion path="M 750 110 L 800 200" dur="2s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- NYC to MIA (North America) -->
+                    <path class="route-line" d="M 300 120 L 350 120" style="animation-delay: 2s;" />
+                    <circle class="route-particle" r="5" cx="300" cy="120">
+                        <animateMotion path="M 300 120 L 350 120" dur="1s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- MIA to CAI (Americas to Africa) -->
+                    <path class="route-line" d="M 350 120 L 550 160" style="animation-delay: 2.3s;" />
+                    <circle class="route-particle" r="5" cx="350" cy="120">
+                        <animateMotion path="M 350 120 L 550 160" dur="2.2s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- LON to JNB (Europe to Africa) -->
+                    <path class="route-line" d="M 520 85 L 510 230" style="animation-delay: 2.6s;" />
+                    <circle class="route-particle" r="5" cx="520" cy="85">
+                        <animateMotion path="M 520 85 L 510 230" dur="2s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- City Nodes -->
+                    <!-- Major Hubs -->
+                    <g class="city-group">
+                        <circle class="city-node" cx="300" cy="120" r="8" />
+                        <text class="city-label" x="300" y="105" text-anchor="middle">NYC</text>
+                    </g>
+                    
+                    <g class="city-group">
+                        <circle class="city-node" cx="520" cy="85" r="8" />
+                        <text class="city-label" x="520" y="70" text-anchor="middle">LON</text>
+                    </g>
+                    
+                    <g class="city-group">
+                        <circle class="city-node" cx="680" cy="95" r="8" />
+                        <text class="city-label" x="680" y="80" text-anchor="middle">DXB</text>
+                    </g>
+                    
+                    <g class="city-group">
+                        <circle class="city-node" cx="750" cy="110" r="8" />
+                        <text class="city-label" x="750" y="95" text-anchor="middle">HKG</text>
+                    </g>
+                    
+                    <g class="city-group">
+                        <circle class="city-node" cx="450" cy="100" r="6" />
+                        <text class="city-label" x="450" y="90" text-anchor="middle">LAX</text>
+                    </g>
+                    
+                    <g class="city-group">
+                        <circle class="city-node" cx="510" cy="230" r="6" />
+                        <text class="city-label" x="510" y="250" text-anchor="middle">JNB</text>
+                    </g>
+                    
+                    <g class="city-group">
+                        <circle class="city-node" cx="300" cy="250" r="6" />
+                        <text class="city-label" x="300" y="270" text-anchor="middle">SAO</text>
+                    </g>
+                    
+                    <g class="city-group">
+                        <circle class="city-node" cx="800" cy="200" r="6" />
+                        <text class="city-label" x="800" y="185" text-anchor="middle">SYD</text>
+                    </g>
+                    
+                    <g class="city-group">
+                        <circle class="city-node" cx="350" cy="120" r="6" />
+                        <text class="city-label" x="350" y="105" text-anchor="middle">MIA</text>
+                    </g>
+                    
+                    <g class="city-group">
+                        <circle class="city-node" cx="550" cy="160" r="6" />
+                        <text class="city-label" x="550" y="145" text-anchor="middle">CAI</text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="countries">150+</div>
+                <div class="stat-label">Countries</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="routes">500+</div>
+                <div class="stat-label">Active Routes</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="coverage">99.9%</div>
+                <div class="stat-label">On-Time Delivery</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="support">24/7</div>
+                <div class="stat-label">Support</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Stagger route animations
+        const routes = document.querySelectorAll('.route-line');
+        routes.forEach((route, index) => {
+            route.style.animationDelay = `${index * 0.3}s`;
+        });
+
+        // Add interactive hover effect for continents
+        const continents = document.querySelectorAll('.continent');
+        continents.forEach(continent => {
+            continent.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+            });
+            continent.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Animate stats on scroll into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsContainer = document.querySelector('.stats');
+        observer.observe(statsContainer);
+
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-value');
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                if (target.includes('+')) {
+                    counter.textContent = '0+';
+                    setTimeout(() => counter.textContent = target, 300);
+                }
+                if (target.includes('%')) {
+                    counter.textContent = '0%';
+                    setTimeout(() => counter.textContent = target, 400);
+                }
+                if (target.includes('/')) {
+                    counter.textContent = '24/7';
+                    setTimeout(() => counter.textContent = target, 500);
+                }
+            });
+        }
+
+        // Add continuous particle generation
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            document.querySelector('.map-container').appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 25000);
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 3000);
+        createParticle(); // Initial particles
+    </script>
+</body>
+</html>
