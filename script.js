@@ -15,6 +15,17 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Update CSS var with dynamic navbar height (for safe hero offset)
+const setNavbarHeightVar = () => {
+    if (!navbar) return;
+    const h = navbar.offsetHeight;
+    document.documentElement.style.setProperty('--navbar-height-dyn', h + 'px');
+};
+window.addEventListener('load', setNavbarHeightVar);
+window.addEventListener('resize', setNavbarHeightVar);
+const resizeObserver = window.ResizeObserver ? new ResizeObserver(setNavbarHeightVar) : null;
+if (resizeObserver && navbar) resizeObserver.observe(navbar);
+
 // Mobile menu toggle
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
@@ -35,7 +46,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const navHeight = navbar.offsetHeight;
+            const navHeight = navbar ? navbar.offsetHeight : 0;
             const targetPosition = target.offsetTop - navHeight;
             window.scrollTo({
                 top: targetPosition,
@@ -135,6 +146,65 @@ scrollElements.forEach(el => {
 
 window.addEventListener('scroll', handleScrollAnimation);
 handleScrollAnimation(); // Check on load
+
+// ========================================
+// Global Fade-In Observer (reusable utility)
+// ========================================
+(() => {
+    const fadeEls = document.querySelectorAll('.fade-in');
+    if (!fadeEls.length) return;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (prefersReduced) {
+                    entry.target.style.transition = 'none';
+                }
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    fadeEls.forEach(el => observer.observe(el));
+})();
+
+// ========================================
+// Sample-compatible reveal observer & stagger
+// ========================================
+(() => {
+    const revealEls = document.querySelectorAll('.reveal');
+    if (revealEls.length) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+        revealEls.forEach(el => revealObserver.observe(el));
+    }
+
+    const addStaggerDelay = (selector, delay = 150) => {
+        document.querySelectorAll(selector).forEach((el, index) => {
+            el.style.transitionDelay = `${index * delay}ms`;
+        });
+    };
+    addStaggerDelay('.service-card', 150);
+    addStaggerDelay('.value-item', 150);
+    addStaggerDelay('.network-feature', 150);
+    addStaggerDelay('.contact-item', 120);
+})();
+
+// ========================================
+// Reduced motion: match sample behavior
+// ========================================
+(() => {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('*').forEach(el => {
+            el.style.animation = 'none';
+            el.style.transition = 'none';
+        });
+    }
+})();
 
 // ========================================
 // Contact Form Handling
