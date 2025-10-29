@@ -9,6 +9,57 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+	    <style>
+	    	/* Floating WhatsApp button and prompt */
+	    	.whatsapp-float {
+	    		position: fixed;
+	    		right: 20px;
+	    		bottom: 20px;
+	    		width: 56px;
+	    		height: 56px;
+	    		border-radius: 50%;
+	    		background: #25D366;
+	    		color: #ffffff;
+	    		display: flex;
+	    		align-items: center;
+	    		justify-content: center;
+	    		box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+	    		z-index: 1000;
+	    		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	    		overflow: visible;
+	    	}
+	    	.whatsapp-float:hover {
+	    		transform: translateY(-2px);
+	    		box-shadow: 0 14px 40px rgba(0,0,0,0.28);
+	    	}
+	    	.whatsapp-float svg {
+	    		display: block;
+	    	}
+	    	.whatsapp-float .whatsapp-tooltip {
+	    		position: absolute;
+	    		right: 64px;
+	    		bottom: 14px;
+	    		background: #0f172a;
+	    		color: #ffffff;
+	    		padding: 10px 12px;
+	    		border-radius: 10px;
+	    		font-size: 13px;
+	    		line-height: 1;
+	    		white-space: nowrap;
+	    		box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+	    		opacity: 0;
+	    		transform: translateX(6px);
+	    		animation: whatsappTooltipPulse 8s ease-in-out infinite;
+	    	}
+	    	@keyframes whatsappTooltipPulse {
+	    		0%, 30% { opacity: 0; transform: translateX(6px); }
+	    		35%, 55% { opacity: 1; transform: translateX(0); }
+	    		60%, 100% { opacity: 0; transform: translateX(6px); }
+	    	}
+	    	@media (max-width: 640px) {
+	    		.whatsapp-float .whatsapp-tooltip { display: none; }
+	    	}
+	    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -20,13 +71,13 @@
 	                    <span class="logo-text">Transport and Logistics</span>
 	                </div>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#network" class="nav-link">Network</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="network.html" class="nav-link">Network</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
-                <a href="#contact" class="btn btn-nav">Get Quote</a>
+                <a href="contact.html" class="btn btn-nav">Get Quote</a>
                 <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
@@ -536,7 +587,7 @@
                                 <div class="stat-small">Success Rate</div>
                             </div>
                             <div class="stat-card">
-                                <div class="stat-large">500K+</div>
+                                <div class="stat-large">100k plus</div>
                                 <div class="stat-small">Shipments</div>
                             </div>
                         </div>
@@ -762,48 +813,65 @@
 	                        A2 Transport and Logistics — Moving the world with precision, innovation, and unmatched reliability.
 	                    </p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-                        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
-                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="https://www.instagram.com/a2transportandlogistics?igsh=bnM5ZjRzcm4yaXg2&utm_source=qr" class="social-link" aria-label="LinkedIn">in</a>
+                        <a href="https://www.instagram.com/a2transportandlogistics?igsh=bnM5ZjRzcm4yaXg2&utm_source=qr" class="social-link" aria-label="Twitter">𝕏</a>
+                        <a href="https://www.instagram.com/a2transportandlogistics?igsh=bnM5ZjRzcm4yaXg2&utm_source=qr" class="social-link" aria-label="Facebook">f</a>
                     </div>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4 class="footer-title">Services</h4>
                         <ul class="footer-list">
-							<li><a href="#services">Customs Clearing</a></li>
-							<li><a href="#services">Freight Forwarding</a></li>
-							<li><a href="#services">Import/Export Documentation</a></li>
-							<li><a href="#services">Port & Terminal Handling</a></li>
-							<li><a href="#services">Bonded Warehousing</a></li>
-							<li><a href="#services">Post-Clearance Delivery</a></li>
+                            <li><a href="services.html">Customs Clearing</a></li>
+                            <li><a href="services.html">Freight Forwarding</a></li>
+                            <li><a href="services.html">Import/Export Documentation</a></li>
+                            <li><a href="services.html">Port & Terminal Handling</a></li>
+                            <li><a href="services.html">Bonded Warehousing</a></li>
+                            <li><a href="services.html">Post-Clearance Delivery</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4 class="footer-title">Company</h4>
                         <ul class="footer-list">
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#network">Network</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a href="#">Careers</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="network.html">Network</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4 class="footer-title">Legal</h4>
                         <ul class="footer-list">
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
                             <li><a href="#">Cookie Policy</a></li>
                             <li><a href="#">Compliance</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-	            <div class="footer-bottom">
-	                <p>&copy; 2024 A2 Transport and Logistics. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 A2 Transport and Logistics. All rights reserved.</p>
+                <p>Crafted by CoveraTech Ltd</p>
             </div>
         </div>
     </footer>
+
+    	<!-- Floating WhatsApp Chat Button -->
+    	<a
+    		class="whatsapp-float"
+    		href="https://wa.me/2349167943303?text=Hello%20A2%20Transport%20and%20Logistics!%20I%27d%20like%20to%20discuss%20a%20shipment."
+    		target="_blank"
+    		rel="noopener"
+    		aria-label="Chat with us on WhatsApp"
+    		title="Chat with us on WhatsApp"
+    	>
+    		<span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+		<svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+			<path fill="currentColor" d="M19.11 17.48c-.28-.14-1.63-.8-1.88-.89-.25-.09-.43-.14-.61.14-.18.28-.7.89-.86 1.07-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.22-1.38-.82-.73-1.37-1.63-1.53-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.32.41-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.46-.16 0-.35-.02-.53-.02-.18 0-.49.07-.75.35-.25.28-.96.94-.96 2.28 0 1.34.98 2.63 1.12 2.81.14.18 1.93 2.94 4.69 4.02.66.28 1.18.45 1.58.58.66.21 1.26.18 1.74.11.53-.08 1.63-.67 1.86-1.32.23-.65.23-1.21.16-1.32-.07-.11-.25-.18-.53-.32z"/>
+			<path fill="currentColor" d="M27.54 4.46C24.85 1.77 21.12.25 17.19.25 9.11.25 2.5 6.86 2.5 14.94c0 2.5.66 4.94 1.92 7.08L2 30l8.2-2.37c2.06 1.12 4.39 1.71 6.79 1.71 8.08 0 14.69-6.61 14.69-14.69 0-3.93-1.53-7.66-4.32-10.45zM16.99 27.11c-2.16 0-4.27-.58-6.12-1.68l-.44-.26-4.87 1.41 1.39-4.74-.29-.48a11.51 11.51 0 0 1-1.74-6.11c0-6.36 5.17-11.53 11.53-11.53 3.08 0 5.98 1.2 8.16 3.37 2.18 2.18 3.37 5.08 3.37 8.16 0 6.36-5.17 11.53-11.53 11.53z"/>
+		</svg>
+    	</a>
 
     <script src="script.js"></script>
 </body>

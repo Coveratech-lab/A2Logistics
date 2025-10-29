@@ -1708,29 +1708,30 @@ textarea.form-input {
     /* Hero Section */
     .hero {
         height: auto;
-        min-height: calc(100vh - var(--navbar-height));
-        padding-top: var(--navbar-height-dyn, var(--navbar-height));
-        padding-bottom: var(--spacing-lg);
+        min-height: calc(100vh - var(--navbar-height-dyn, var(--navbar-height)));
+        padding-top: calc(var(--navbar-height-dyn, var(--navbar-height)) + var(--spacing-2xl));
+        padding-bottom: var(--spacing-md);
     }
     
     .hero-content {
-        gap: var(--spacing-sm);
+        gap: var(--spacing-md);
     }
     
     .hero-title {
-        font-size: clamp(4.2rem, 9vw, 6rem);
-        margin-bottom: var(--spacing-md);
+        font-size: clamp(3.78rem, 8.1vw, 5.4rem);
+        margin-bottom: var(--spacing-lg);
     }
     
     .hero-subtitle {
         font-size: clamp(1rem, 2vw, 1.125rem);
         margin-bottom: var(--spacing-lg);
+        line-height: 1.75;
     }
     
     .hero-badge {
         font-size: 0.7rem;
         padding: 6px 12px;
-        margin-bottom: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
     }
     
     .hero-stats-inline {
@@ -1759,9 +1760,9 @@ textarea.form-input {
     
     .hero-cta {
         flex-direction: column;
-        gap: var(--spacing-sm);
-        margin-top: var(--spacing-md);
-        margin-bottom: var(--spacing-md);
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+        margin-bottom: var(--spacing-sm);
     }
     
     .btn-large {
@@ -1935,25 +1936,25 @@ textarea.form-input {
     /* Hero Section */
     .hero {
         height: auto;
-        min-height: calc(100vh - var(--navbar-height));
-        padding-top: var(--navbar-height);
-        padding-bottom: var(--spacing-lg);
+        min-height: calc(100vh - var(--navbar-height-dyn, var(--navbar-height)));
+        padding-top: calc(var(--navbar-height-dyn, var(--navbar-height)) + var(--spacing-2xl));
+        padding-bottom: var(--spacing-md);
     }
     
     .hero-content {
-        gap: var(--spacing-sm);
+        gap: var(--spacing-md);
         padding-bottom: var(--spacing-sm);
     }
     
     .hero-title {
-        font-size: clamp(3.75rem, 10vw, 5.25rem);
-        margin-bottom: var(--spacing-sm);
+        font-size: clamp(3.375rem, 9vw, 4.725rem);
+        margin-bottom: var(--spacing-md);
     }
     
     .hero-subtitle {
         font-size: 0.9rem;
-        margin-bottom: var(--spacing-sm);
-        line-height: 1.6;
+        margin-bottom: var(--spacing-md);
+        line-height: 1.7;
     }
     
     .hero-badge {
@@ -1977,7 +1978,7 @@ textarea.form-input {
     }
     
     .hero-cta {
-        margin-top: var(--spacing-md);
+        margin-top: var(--spacing-lg);
         margin-bottom: var(--spacing-sm);
     }
     
@@ -2080,7 +2081,7 @@ textarea.form-input {
 /* Small Mobile: 360px and below */
 @media (max-width: 360px) {
     .hero-title {
-        font-size: clamp(3rem, 9vw, 3.75rem);
+        font-size: clamp(2.7rem, 8.1vw, 3.375rem);
         margin-bottom: var(--spacing-xs);
     }
     
