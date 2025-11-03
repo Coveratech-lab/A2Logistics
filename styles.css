@@ -1328,6 +1328,7 @@ body {
     display: inline-block;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     line-height: 1;
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'EmojiOne', 'Twemoji', 'Open Sans', 'Arial', sans-serif;
 }
 
 .label-text {
