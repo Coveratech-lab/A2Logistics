@@ -103,18 +103,18 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgba(10, 14, 26, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(30px) saturate(180%);
     -webkit-backdrop-filter: blur(30px) saturate(180%);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 0;
+    padding: 10px 0;
 }
 
 .logo {
@@ -130,7 +130,14 @@ body {
 }
 
 .navbar.scrolled .logo {
-    color: var(--white);
+    color: var(--primary-navy);
+}
+
+.logo-image {
+    height: 75px;
+    width: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .logo-icon {
@@ -177,7 +184,7 @@ body {
 }
 
 .navbar.scrolled .nav-link {
-    color: var(--gray-300);
+    color: var(--gray-700);
 }
 
 .nav-link:hover {
@@ -185,7 +192,7 @@ body {
 }
 
 .navbar.scrolled .nav-link:hover {
-    color: var(--cyan-accent);
+    color: var(--electric-blue);
 }
 
 .btn-nav {
@@ -225,7 +232,7 @@ body {
 }
 
 .navbar.scrolled .nav-toggle span {
-    background: var(--white);
+    background: var(--primary-navy);
 }
 
 /* Hamburger active (morph to close icon) */
@@ -1006,6 +1013,27 @@ body {
     border-color: rgba(0, 102, 255, 0.2);
 }
 
+.service-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--electric-blue), var(--cyan-accent));
+    position: relative;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.05);
+}
+
 .service-header {
     display: flex;
     justify-content: space-between;
@@ -1130,6 +1158,34 @@ body {
 
 .about-visual {
     position: relative;
+}
+
+.about-gallery {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 12px;
+    align-items: stretch;
+    margin-bottom: 18px;
+}
+
+.about-gallery > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.about-gallery > div {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+}
+
+.about-gallery > div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
 }
 
 .about-card {
@@ -1687,15 +1743,15 @@ textarea.form-input {
     }
     
     .navbar.scrolled .nav-menu {
-        background: rgba(10, 14, 26, 0.98);
+        background: rgba(255, 255, 255, 0.98);
     }
     
     .navbar.scrolled .nav-link {
-        color: var(--gray-300);
+        color: var(--gray-700);
     }
     
     .navbar.scrolled .nav-link:hover {
-        color: var(--cyan-accent);
+        color: var(--electric-blue);
     }
     
     .nav-toggle {
@@ -1834,6 +1890,23 @@ textarea.form-input {
         height: 50px;
     }
     
+    /* About Gallery - Stack on mobile */
+    .about-gallery {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .about-gallery > div {
+        grid-template-rows: auto;
+        gap: 12px;
+    }
+    
+    .about-gallery > img,
+    .about-gallery > div img {
+        height: 250px;
+        min-height: 250px;
+    }
+    
     /* Network Section */
     .network {
         padding: var(--spacing-2xl) 0;
@@ -1926,12 +1999,16 @@ textarea.form-input {
         font-size: 1rem;
     }
     
+    .logo-image {
+        height: 55px;
+    }
+    
     .logo-text {
         font-size: 1.25rem;
     }
     
     .nav-wrapper {
-        padding: 12px 0;
+        padding: 8px 0;
     }
     
     /* Hero Section */
