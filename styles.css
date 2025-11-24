@@ -127,6 +127,7 @@ body {
     text-decoration: none;
     color: var(--primary-navy);
     transition: color var(--transition-base);
+    padding-left: 15px;
 }
 
 .navbar.scrolled .logo {
