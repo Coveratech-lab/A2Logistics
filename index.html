@@ -773,133 +773,286 @@
     <section class="network" id="network">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Global Network</span>
+                <span class="section-tag">Coverage</span>
                 <h2 class="section-title">Connected World</h2>
-                <p class="section-description">
-                    Our logistics network spans across continents, connecting markets and delivering excellence with unmatched precision and speed.
-                </p>
+                <p class="section-description">From ports to inland depots, our presence ensures seamless movement and visibility end‑to‑end.</p>
             </div>
-            <div class="network-content">
-	                <div class="network-features">
-	                    <div class="network-feature">
-	                        <div class="feature-icon">
-	                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-	                                <circle cx="12" cy="12" r="10"/>
-	                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-	                            </svg>
-	                        </div>
-	                        <div class="feature-content">
-	                            <h3>150+ Countries</h3>
-	                            <p>Global Coverage</p>
-	                        </div>
-	                    </div>
-	                    <div class="network-feature">
-	                        <div class="feature-icon">
-	                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-	                                <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>
-	                            </svg>
-	                        </div>
-	                        <div class="feature-content">
-	                            <h3>99.9% Uptime</h3>
-	                            <p>Reliable Service</p>
-	                        </div>
-	                    </div>
-	                    <div class="network-feature">
-	                        <div class="feature-icon">
-	                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-	                                <rect x="6" y="10" width="12" height="10" rx="2"/>
-	                                <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
-	                            </svg>
-	                        </div>
-	                        <div class="feature-content">
-	                            <h3>Secure</h3>
-	                            <p>Tracked & Protected</p>
-	                        </div>
-	                    </div>
-	                </div>
-                <div class="network-visual">
+            <div class="network-content" style="grid-template-columns: 1fr; gap: var(--spacing-2xl);">
+                <div class="network-visual" style="height: 70vh; min-height: 640px;">
                     <div class="network-map">
-                       
+                                         
+                        <!-- SVG Routes Overlay -->
+                        <svg class="network-svg" viewBox="0 0 1000 600" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#0066ff;stop-opacity:0.3" />
+                                    <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0066ff;stop-opacity:0.3" />
+                                </linearGradient>
+                                <linearGradient id="lineGradientReverse" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#0066ff;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
+                                </linearGradient>
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                                <filter id="glowStrong">
+                                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            
+                            <!-- Major Trade Routes - Lagos Hub (500, 288) -->
+                            <path id="route1" class="route-path" d="M 500 288 Q 440 200 480 168" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- Lagos to London -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="4s" repeatCount="indefinite" begin="1s">
+                                    <mpath href="#route1"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <path id="route2" class="route-path" d="M 500 288 C 420 240 300 200 220 150" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- Lagos to NY -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="5s" repeatCount="indefinite" begin="1.2s">
+                                    <mpath href="#route2"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <path id="route3" class="route-path" d="M 500 288 Q 525 260 550 228" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- Lagos to Dubai -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="3s" repeatCount="indefinite" begin="1.4s">
+                                    <mpath href="#route3"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <path id="route4" class="route-path" d="M 500 288 C 400 320 320 350 250 372" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- Lagos to Sao Paulo -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="4.5s" repeatCount="indefinite" begin="1.6s">
+                                    <mpath href="#route4"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <path id="route5" class="route-path" d="M 500 288 Q 610 270 720 252" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- Lagos to Mumbai -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="4s" repeatCount="indefinite" begin="1.8s">
+                                    <mpath href="#route5"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <!-- Trans-Atlantic Routes -->
+                            <path id="route6" class="route-path" d="M 220 150 C 300 120 400 130 480 168" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- NY to London -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="4s" repeatCount="indefinite" begin="2s">
+                                    <mpath href="#route6"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <path id="route7" class="route-path" d="M 120 90 Q 170 120 220 150" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- Toronto to NY -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="3s" repeatCount="indefinite" begin="2.2s">
+                                    <mpath href="#route7"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <path id="route8" class="route-path" d="M 220 150 Q 160 180 100 210" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- NY to Mexico City -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="3.5s" repeatCount="indefinite" begin="2.4s">
+                                    <mpath href="#route8"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <!-- Europe to Middle East -->
+                            <path id="route9" class="route-path" d="M 480 168 Q 515 200 550 228" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- London to Dubai -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="3.5s" repeatCount="indefinite" begin="2.6s">
+                                    <mpath href="#route9"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <path id="route10" class="route-path" d="M 480 168 Q 550 180 620 192" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- London to Istanbul -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="4s" repeatCount="indefinite" begin="2.8s">
+                                    <mpath href="#route10"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <!-- Middle East to Asia -->
+                            <path id="route11" class="route-path" d="M 550 228 Q 635 240 720 252" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- Dubai to Mumbai -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="4s" repeatCount="indefinite" begin="3s">
+                                    <mpath href="#route11"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <path id="route12" class="route-path" d="M 620 192 Q 700 192 780 192" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- Istanbul to Shanghai -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="4.5s" repeatCount="indefinite" begin="3.2s">
+                                    <mpath href="#route12"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <!-- Asia Pacific Routes -->
+                            <path id="route13" class="route-path" d="M 720 252 Q 750 222 780 192" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- Mumbai to Shanghai -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="3.5s" repeatCount="indefinite" begin="3.4s">
+                                    <mpath href="#route13"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <path id="route14" class="route-path" d="M 780 192 Q 815 171 850 132" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- Shanghai to Tokyo -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="3s" repeatCount="indefinite" begin="3.6s">
+                                    <mpath href="#route14"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <path id="route15" class="route-path" d="M 800 150 C 805 250 815 350 820 450" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- Beijing to Sydney -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="5s" repeatCount="indefinite" begin="3.8s">
+                                    <mpath href="#route15"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <path id="route16" class="route-path" d="M 780 192 C 790 280 805 370 820 450" fill="none" stroke="url(#lineGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" /> <!-- Shanghai to Sydney -->
+                            <circle class="route-dot" r="4" fill="#00d4ff" filter="url(#glowStrong)">
+                                <animateMotion dur="4.5s" repeatCount="indefinite" begin="4s">
+                                    <mpath href="#route16"/>
+                                </animateMotion>
+                            </circle>
+                        </svg>
+
+                        <!-- Map Points with Flags -->
+                        <!-- Position percentages calculated: x/1000, y/600 -->
                         
-                        <!-- Interactive Points with Labels -->
-	                        <div class="map-point-wrapper" style="top: 20%; left: 12%;">
-	                            <div class="map-point"></div>
-	                            <div class="map-label">
-	                                <span class="label-icon">
-	                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
-	                                </span>
-	                                <span class="label-text">North America</span>
-	                            </div>
-	                        </div>
-	                        <div class="map-point-wrapper" style="top: 25%; left: 48%;">
-	                            <div class="map-point"></div>
-	                            <div class="map-label">
-	                                <span class="label-icon">
-	                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
-	                                </span>
-	                                <span class="label-text">Europe</span>
-	                            </div>
-	                        </div>
-	                        <div class="map-point-wrapper" style="top: 22%; left: 85%;">
-	                            <div class="map-point"></div>
-	                            <div class="map-label">
-	                                <span class="label-icon">
-	                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
-	                                </span>
-	                                <span class="label-text">Asia</span>
-	                            </div>
-	                        </div>
-	                        <div class="map-point-wrapper" style="top: 60%; left: 15%;">
-	                            <div class="map-point"></div>
-	                            <div class="map-label">
-	                                <span class="label-icon">
-	                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
-	                                </span>
-	                                <span class="label-text">South America</span>
-	                            </div>
-	                        </div>
-	                        <div class="map-point-wrapper" style="top: 75%; left: 75%;">
-	                            <div class="map-point"></div>
-	                            <div class="map-label">
-	                                <span class="label-icon">
-	                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
-	                                </span>
-	                                <span class="label-text">Australia</span>
-	                            </div>
-	                        </div>
-	                        <div class="map-point-wrapper" style="top: 50%; left: 50%;">
-	                            <div class="map-point"></div>
-	                            <div class="map-label">
-	                                <span class="label-icon">
-	                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
-	                                </span>
-	                                <span class="label-text">Africa</span>
-	                            </div>
-	                        </div>
+                        <!-- London: 480, 168 -->
+                        <div class="map-point-wrapper" style="top: 28%; left: 48%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇬🇧</span>
+                                <span class="label-text">London</span>
+                            </div>
+                        </div>
                         
-                        <!-- Animated Route Lines - Glowing Global Routes -->
-                        <!-- North America to Europe (Atlantic) -->
-                        <div class="route-line curved" style="top: 18%; left: 20%; width: 35%; transform: rotate(15deg);"><span class="route-dot"></span></div>
-                        <!-- Europe to Asia (Eurasian) -->
-                        <div class="route-line curved" style="top: 22%; left: 50%; width: 30%; transform: rotate(-5deg);"><span class="route-dot"></span></div>
-                        <!-- North America to Asia (Pacific) -->
-                        <div class="route-line curved" style="top: 12%; left: 15%; width: 75%; transform: rotate(3deg);"><span class="route-dot"></span></div>
-                        <!-- Europe to Africa (Mediterranean) -->
-                        <div class="route-line curved" style="top: 38%; left: 50%; width: 20%; transform: rotate(90deg);"><span class="route-dot"></span></div>
-                        <!-- Asia to Australia (Asia-Pacific) -->
-                        <div class="route-line curved" style="top: 58%; left: 75%; width: 18%; transform: rotate(-30deg);"><span class="route-dot"></span></div>
-                        <!-- North America to South America (Americas) -->
-                        <div class="route-line curved" style="top: 32%; left: 25%; width: 25%; transform: rotate(85deg);"><span class="route-dot"></span></div>
-                        <!-- Africa to Asia (Indian Ocean) -->
-                        <div class="route-line curved" style="top: 42%; left: 45%; width: 35%; transform: rotate(-12deg);"><span class="route-dot"></span></div>
-                        <!-- Europe to South America (Atlantic) -->
-                        <div class="route-line curved" style="top: 35%; left: 50%; width: 30%; transform: rotate(-50deg);"><span class="route-dot"></span></div>
-                        <!-- Cross-Pacific Long Route -->
-                        <div class="route-line curved" style="top: 25%; left: 8%; width: 85%; transform: rotate(1deg);"><span class="route-dot"></span></div>
-                        <!-- Additional connecting routes -->
-                        <div class="route-line curved" style="top: 28%; left: 30%; width: 25%; transform: rotate(45deg);"><span class="route-dot"></span></div>
-                        <div class="route-line curved" style="top: 45%; left: 60%; width: 20%; transform: rotate(-60deg);"><span class="route-dot"></span></div>
+                        <!-- New York: 220, 150 -->
+                        <div class="map-point-wrapper" style="top: 25%; left: 22%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇺🇸</span>
+                                <span class="label-text">New York</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Toronto: 120, 90 -->
+                        <div class="map-point-wrapper" style="top: 15%; left: 12%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇨🇦</span>
+                                <span class="label-text">Toronto</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Tokyo: 850, 132 -->
+                        <div class="map-point-wrapper" style="top: 22%; left: 85%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇯🇵</span>
+                                <span class="label-text">Tokyo</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Shanghai: 780, 192 -->
+                        <div class="map-point-wrapper" style="top: 32%; left: 78%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇨🇳</span>
+                                <span class="label-text">Shanghai</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Beijing (Corrected): 800, 150 -->
+                        <div class="map-point-wrapper" style="top: 25%; left: 80%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇨🇳</span>
+                                <span class="label-text">Beijing</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Mumbai: 720, 252 -->
+                        <div class="map-point-wrapper" style="top: 42%; left: 72%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇮🇳</span>
+                                <span class="label-text">Mumbai</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Dubai: 550, 228 -->
+                        <div class="map-point-wrapper" style="top: 38%; left: 55%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇦🇪</span>
+                                <span class="label-text">Dubai</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Lagos: 500, 288 -->
+                        <div class="map-point-wrapper" style="top: 48%; left: 50%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇳🇬</span>
+                                <span class="label-text">Lagos</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Sao Paulo: 250, 372 -->
+                        <div class="map-point-wrapper" style="top: 62%; left: 25%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇧🇷</span>
+                                <span class="label-text">São Paulo</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Sydney: 820, 450 -->
+                        <div class="map-point-wrapper" style="top: 75%; left: 82%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇦🇺</span>
+                                <span class="label-text">Sydney</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Mexico City: 100, 210 -->
+                        <div class="map-point-wrapper" style="top: 35%; left: 10%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇲🇽</span>
+                                <span class="label-text">Mexico City</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Istanbul: 620, 192 -->
+                        <div class="map-point-wrapper" style="top: 32%; left: 62%;">
+                            <div class="map-point"></div>
+                            <div class="map-label">
+                                <span class="label-icon">🇹🇷</span>
+                                <span class="label-text">Istanbul</span>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="network-features">
+                    <div class="network-feature"><div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="feature-content"><h3>150+ Countries</h3><p>Global Reach</p></div></div>
+                    <div class="network-feature"><div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div><div class="feature-content"><h3>Priority Lanes</h3><p>Fast Clearance</p></div></div>
+                    <div class="network-feature"><div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="10" width="12" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><div class="feature-content"><h3>Secure</h3><p>Protected Routes</p></div></div>
                 </div>
             </div>
         </div>
@@ -925,7 +1078,9 @@
 	                            </div>
 	                            <div class="contact-text">
 	                                <h3>Headquarters</h3>
-	                                <p>20 Commercial Rd, Apapa, 100272, Lagos</p>
+	                                <p>
+	                                    <a href="https://www.google.com/maps/search/?api=1&query=20+Commercial+Rd,+Apapa,+100272,+Lagos,+Nigeria" target="_blank" rel="noopener noreferrer" class="contact-link">20 Commercial Rd, Apapa, 100272, Lagos</a>
+	                                </p>
 	                            </div>
 	                        </div>
 	                        <div class="contact-item">
@@ -936,7 +1091,12 @@
 	                            </div>
 	                            <div class="contact-text">
 	                                <h3>Phone</h3>
-	                                <p>+234 916 794 3303<br>+234 806 406 5533<br>+234 816 055 7612<br>24/7 Support Available</p>
+	                                <p>
+	                                    <a href="tel:+2349167943303" class="contact-link">+234 916 794 3303</a><br>
+	                                    <a href="tel:+2348064065533" class="contact-link">+234 806 406 5533</a><br>
+	                                    <a href="tel:+2348160557612" class="contact-link">+234 816 055 7612</a><br>
+	                                    <span style="color: var(--gray-500); font-size: 0.875rem;">24/7 Support Available</span>
+	                                </p>
 	                            </div>
 	                        </div>
 	                        <div class="contact-item">
@@ -948,7 +1108,9 @@
 	                            </div>
 	                            <div class="contact-text">
 	                                <h3>Email</h3>
-	                                <p>info@a2transportandlogistics.com</p>
+	                                <p>
+	                                    <a href="mailto:info@a2transportandlogistics.com" class="contact-link">info@a2transportandlogistics.com</a>
+	                                </p>
 	                            </div>
 	                        </div>
 	                    </div>
