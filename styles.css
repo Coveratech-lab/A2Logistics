@@ -115,11 +115,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
+    position: relative;
+    min-height: var(--navbar-height);
 }
 
 .logo {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: var(--spacing-xs);
     font-family: var(--font-heading);
     font-weight: 700;
@@ -127,7 +129,13 @@ body {
     text-decoration: none;
     color: var(--primary-navy);
     transition: color var(--transition-base);
-    padding-left: 15px;
+    position: absolute;
+    left: var(--spacing-md);
+    top: 0;
+    height: var(--navbar-height);
+    padding: 0;
+    margin: 0;
+    z-index: 10;
 }
 
 .navbar.scrolled .logo {
@@ -135,10 +143,12 @@ body {
 }
 
 .logo-image {
-    height: 100px;
+    height: 100%;
     width: auto;
     object-fit: contain;
     display: block;
+    margin: 0;
+    padding: 0;
 }
 
 .logo-icon {
@@ -173,7 +183,10 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
+    margin-left: 200px;
+    margin-right: auto;
+    flex-shrink: 0;
 }
 
 .nav-link {
@@ -208,6 +221,11 @@ body {
     font-size: 0.9rem;
     transition: all var(--transition-base);
     box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+    position: relative;
+    z-index: 10;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: var(--spacing-md);
 }
 
 .btn-nav:hover {
@@ -223,6 +241,9 @@ body {
     border: none;
     cursor: pointer;
     padding: var(--spacing-xs);
+    position: relative;
+    z-index: 100;
+    margin-left: auto;
 }
 
 .nav-toggle span {
@@ -907,7 +928,7 @@ body {
    ======================================== */
 .services {
     padding: var(--spacing-4xl) 0;
-    background: var(--off-white);
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.05), rgba(0, 212, 255, 0.05));
     position: relative;
 }
 
@@ -1945,6 +1966,19 @@ textarea.form-input {
         grid-template-columns: 1fr;
     }
     
+    /* Navigation - Tablet */
+    .nav-menu {
+        margin-left: 150px;
+        margin-right: var(--spacing-sm);
+        gap: var(--spacing-md);
+    }
+    
+    .btn-nav {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+        margin-left: var(--spacing-sm);
+    }
+    
     /* Contact Section - Tablet Fix */
     .contact-details {
         width: 100%;
@@ -2065,6 +2099,8 @@ textarea.form-input {
         box-shadow: var(--shadow-lg);
         padding: var(--spacing-lg) 0;
         z-index: 999;
+        margin-left: 0;
+        margin-right: 0;
     }
     
     .nav-menu.active {
@@ -2095,10 +2131,16 @@ textarea.form-input {
     
     .nav-toggle {
         display: flex;
+        z-index: 100;
+        position: relative;
     }
     
     .btn-nav {
         display: none;
+    }
+    
+    .logo {
+        z-index: 1;
     }
     
     /* Hero Section */
@@ -2437,8 +2479,13 @@ textarea.form-input {
         font-size: 1rem;
     }
     
+    .logo {
+        left: var(--spacing-sm);
+        height: var(--navbar-height);
+    }
+    
     .logo-image {
-        height: 60px;
+        height: 100%;
     }
     
     .logo-text {
@@ -2447,6 +2494,22 @@ textarea.form-input {
     
     .nav-wrapper {
         padding: 8px 0;
+        min-height: var(--navbar-height);
+    }
+    
+    .nav-menu {
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .nav-toggle {
+        z-index: 100;
+        position: relative;
+    }
+    
+    .logo {
+        z-index: 1;
     }
     
     /* Hero Section */
