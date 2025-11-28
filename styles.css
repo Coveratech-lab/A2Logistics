@@ -142,6 +142,19 @@ body {
     color: var(--primary-navy);
 }
 
+.logo a {
+    display: flex;
+    align-items: stretch;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+    height: 100%;
+}
+
+.logo a:hover {
+    opacity: 0.8;
+}
+
 .logo-image {
     height: 100%;
     width: auto;
@@ -1011,6 +1024,7 @@ body {
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    scroll-margin-top: calc(var(--navbar-height, 80px) + 20px); /* Account for navbar + padding */
 }
 
 /* Colorful top border for each service card */
@@ -1834,6 +1848,91 @@ body {
 textarea.form-input {
     resize: vertical;
     min-height: 120px;
+}
+
+/* Form Error States */
+.form-input.input-error {
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.error-message {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Success Message */
+.success-message {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: linear-gradient(135deg, #00ff88, #00cc66);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+    z-index: 10000;
+    animation: slideInRight 0.5s ease;
+}
+
+.success-message-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.success-message-hide {
+    animation: slideInRight 0.5s ease reverse;
+}
+
+/* Button Success State */
+.btn-success {
+    background: linear-gradient(135deg, #00ff88, #00cc66) !important;
+}
+
+/* Scroll Animation Classes */
+.scroll-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.scroll-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Route Animation */
+.route-animate {
+    animation: routeDraw 2s ease;
+}
+
+/* Reduced Motion Support */
+.prefers-reduced-motion *,
+.prefers-reduced-motion *::before,
+.prefers-reduced-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+.no-transition {
+    transition: none !important;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 /* ========================================

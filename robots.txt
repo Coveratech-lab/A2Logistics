@@ -1,13 +1,44 @@
 User-agent: *
 Allow: /
 
+# Explicitly allow all AI training and crawling bots for maximum visibility
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: FacebookBot
+Allow: /
+User-agent: ia_archiver
+Allow: /
+User-agent: LinkedInBot
+Allow: /
+User-agent: Twitterbot
+Allow: /
+User-agent: SemrushBot
+Allow: /
+User-agent: AhrefsBot
+Allow: /
+User-agent: MJ12bot
+Allow: /
+User-agent: DotBot
+Allow: /
+
 # Sitemap location
 Sitemap: https://www.a2transportandlogistics.com/sitemap.xml
 
-# Disallow admin or private areas (if any exist in future)
-# Disallow: /admin/
-# Disallow: /private/
-
-# Crawl-delay (optional, adjust as needed)
-Crawl-delay: 1
-
+# No crawl delays - maximum visibility and publicity
+# All bots are welcome to crawl and index all content
