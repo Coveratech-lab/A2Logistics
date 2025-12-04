@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | A2 Transport and Logistics</title>
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Favicon / PWA -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/A2logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/A2logo.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/A2logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/A2logo.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0066ff">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 900;
+            font-family: var(--font-heading);
+            background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: var(--spacing-md);
+        }
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: var(--spacing-sm);
+        }
+        .error-description {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.7;
+        }
+        .error-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 640px) {
+            .error-code {
+                font-size: 5rem;
+            }
+            .error-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-description">
+                The page you're looking for doesn't exist or has been moved. 
+                Let's get you back on track with our logistics services.
+            </p>
+            <div class="error-actions">
+                <a href="/" class="btn btn-primary">Go to Homepage</a>
+                <a href="/contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

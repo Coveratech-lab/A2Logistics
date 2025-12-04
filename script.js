@@ -525,3 +525,25 @@ if (window.location.hostname === 'localhost' || window.location.hostname === '12
     console.log('%cMoving the world with precision, innovation, and unmatched reliability.', 'font-size: 14px; color: #495057;');
     console.log('%cWebsite redesigned for 10/10 excellence ✨', 'font-size: 12px; color: #6c757d;');
 }
+
+// ========================================
+// Service Worker Registration (PWA)
+// ========================================
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        const swUrl = '/sw.js';
+
+        navigator.serviceWorker
+            .register(swUrl)
+            .then((registration) => {
+                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('dev')) {
+                    console.log('Service worker registered with scope:', registration.scope);
+                }
+            })
+            .catch((error) => {
+                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('dev')) {
+                    console.error('Service worker registration failed:', error);
+                }
+            });
+    });
+}
